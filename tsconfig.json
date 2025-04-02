@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    // Compiler Setup
+    "target": "ES2022", // Use Modern JavaScript Features
+    "module": "NodeNext", // Use Node.Js Native Module System
+    "moduleResolution": "node16", // Ensure Compatibility With ES Modules
+
+    // Directory Routing
+    "outDir": "dist", // Set Out Dir For Compilation Output
+    "rootDir": "src", // Location Of TypeScript Source Files
+    "typeRoots": ["src/@types", "node_modules/@types"], // Location Of Type Files
+
+    // Type Checking
+    "strict": true, // Enable All Type Checking Features
+    "noImplicitAny": true, // Disallow Variables With Implicit Type Of 'any'
+    "strictNullChecks": true, // Prevent Use Of 'null' or 'undefined' Without Explicit Check
+    "strictPropertyInitialization": true, // Ensure Class Properties Are Properly Initialized
+
+    // Code Consistency & Safety
+    "forceConsistentCasingInFileNames": true, // Prevent Mix-Matched File Casing Issues
+    "esModuleInterop": true, // Allows Default Import From CommonJS Modules
+    "skipLibCheck": true, // Speed Up Compilation By Eleminating Type Checks On Dependencies
+    "resolveJsonModule": true, // Allow Importing JSON Files
+    "allowSyntheticDefaultImports": true, // Allow Default Imports Even If Module Doesn't Export One
+
+    // Linting & Debugging
+    "noFallthroughCasesInSwitch": true, // Prevents Accidental Fallthroughs In 'Switch' Statements
+    "noImplicitReturns": true, // Ensures All Code Paths In Funtion Retrun A Value
+    "noUncheckedIndexedAccess": true, // Ensure Proper Checks Before Accessing Array/Object Indexes
+
+    // Compiler Behaviour
+    "noEmit": true // Prevents TypeScript From Outputting Compiled Files
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist/**/*", "node_modules"]
+}

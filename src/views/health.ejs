@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Health Check</title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Arial', sans-serif;
+      }
+
+      body {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          background-color: #121212;
+          color: #fff;
+          text-align: center;
+      }
+
+      .container {
+          width: 75%; /* Changed from fixed width to 75% of page */
+          max-width: 1000px; /* Set a max width to avoid it getting too large */
+          padding: 30px;
+          background-color: #1e1e1e;
+          border-radius: 10px;
+          box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      }
+
+      h1 {
+          font-size: 2.2rem;
+          margin-bottom: 15px;
+          color: #4caf50;
+      }
+
+      .status {
+          margin-bottom: 20px;
+          font-size: 1.2rem;
+      }
+			
+      .status p {
+          font-size: 1rem;
+          opacity: 0.8;
+      }
+
+      .details {
+          text-align: left;
+          margin-top: 15px;
+      }
+
+      .details h3 {
+          color: #4caf50;
+          font-size: 1.3rem;
+          margin-bottom: 10px;
+      }
+
+      .details ul {
+          list-style: none;
+          padding: 0;
+      }
+
+      .details li {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+          padding: 10px 0;
+          font-size: 1.1rem;
+      }
+
+      .details li strong {
+          color: #bbb;
+          flex: 1; /* Allows labels to take up equal space */
+      }
+
+      .details li span {
+          flex: 2; /* Allows values to take up more space */
+          text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>API Health Check</h1>
+
+      <div class="status">
+        <h2style="color: <%= health.success ? '#4caf50' : '#ff4f4f' %>;">Status: <%= health.success ? "✅ Healthy" : "❌ Unhealthy" %></h2>
+        <p><strong>Message:</strong> <%= health.message %></p>
+      </div>
+
+      <div class="details">
+        <h3>System Details:</h3>
+        <ul>
+          <li><strong>Uptime:</strong> <span><%= health.uptime %></span></li>
+          <li>
+            <strong>Memory Usage:</strong>
+            <span><%= health.memoryUsage %></span>
+          </li>
+          <li><strong>CPU Load:</strong> <span><%= health.cpuLoad %></span></li>
+          <li>
+            <strong>Database:</strong>
+            <span><%= health.database || "N/A" %></span>
+          </li>
+          <li>
+            <strong>Timestamp:</strong> <span><%= health.timestamp %></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

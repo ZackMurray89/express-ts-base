@@ -1,0 +1,46 @@
+# Node.Js Dependencies
+node_modules/
+package-lock.json
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env*.local
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsprod
+*.sln
+*.sw?
+
+# Build Artifacts
+dist/
+build/
+out
+
+# TypeScript Cache & Output
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Logs & Debugging
+npm-debug.log*
+*.logs
+logs/
+debug.log
+error.log
+*.pid
+*.seed
+*.csv
+
+# Operating System Specific
+.DS_Store
+Thumbs.db
+
+# Git Specific
+.git/
