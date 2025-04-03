@@ -1,6 +1,6 @@
-import env from "../config/env";
-
 import cors from "cors";
+
+import env from "../config/env";
 
 const corsOptions: cors.CorsOptions = {
   origin: env.NODE_ENV === "production" ? "https://domain" : "*",

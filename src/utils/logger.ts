@@ -1,9 +1,9 @@
-import env from "../config/env";
-
 import morgan, { StreamOptions } from "morgan";
 import path from "path";
 import winston from "winston";
 import DailyRotateFile from "winston-daily-rotate-file";
+
+import env from "../config/env";
 
 const logFormat = winston.format.combine(
   winston.format.timestamp({

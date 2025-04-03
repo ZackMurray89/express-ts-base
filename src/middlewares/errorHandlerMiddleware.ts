@@ -1,16 +1,18 @@
+import { Request, Response } from "express";
+
 import env from "../config/env";
-import { HTTP } from "../constants/httpConstants";
-import { ERROR } from "../constants/messageConstants";
-import { AppError } from "../errors/AppError";
+
 import { logger } from "../utils/logger";
 
-import { NextFunction, Request, Response } from "express";
+import { HTTP } from "../constants/httpConstants";
+import { ERROR } from "../constants/messageConstants";
+
+import { AppError } from "../errors/AppError";
 
 export default function errorHandler(
   err: unknown,
   req: Request,
   res: Response,
-  _next: NextFunction,
 ) {
   let error = err;
 

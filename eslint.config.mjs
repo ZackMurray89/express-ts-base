@@ -56,10 +56,67 @@ export default defineConfig([
         {
           groups: [
             ["^node:"], // Node.Js Built-In Imports
-            ["^react$", "^next", "^@\\w"], // External Package Imports
-            ["^lib/", "^utils", "^services/"], // Absolute Imports
-            ["^\\.\\./"], // Relative Imports (Parent Directory)
-            ["\\./"], // Relative Imports (Same Directory)
+            ["^express$"], // Express Specific Packages
+            ["^react$", "^next", "^@\\w", "^mongoose", "^zod", "^[a-zA-Z]"], // External Package Imports
+            ["^lib/", "^utils", "^services/", "^tests/"], // Absolute Imports
+            [
+              "^\\./config/",
+              "^\\.\\./config/",
+              "^\\./config$",
+              "^\\.\\./config$",
+            ],
+            [
+              "^\\./database/",
+              "^\\.\\./database/",
+              "^\\./database$",
+              "^\\.\\./database$",
+            ],
+            [
+              "^\\./middlewares/",
+              "^\\.\\./middlewares/",
+              "^\\./middlewares$",
+              "^\\.\\./middlewares$",
+            ],
+            [
+              "^\\./services/",
+              "^\\.\\./services/",
+              "^\\./services$",
+              "^\\.\\./services$",
+            ],
+            [
+              "^\\./controllers/",
+              "^\\.\\./controllers/",
+              "^\\./controllers$",
+              "^\\.\\./controllers$",
+            ],
+            [
+              "^\\./routes/",
+              "^\\.\\./routes/",
+              "^\\./routes$",
+              "^\\.\\./routes$",
+            ],
+            [
+              "^\\./models/",
+              "^\\.\\./models/",
+              "^\\./models$",
+              "^\\.\\./models$",
+            ],
+            ["^\\./utils/", "^\\.\\./utils/", "^\\./utils$", "^\\.\\./utils$"],
+            [
+              "^\\./constants/",
+              "^\\.\\./constants/",
+              "^\\./constants$",
+              "^\\.\\./constants$",
+            ],
+            [
+              "^\\./errors/",
+              "^\\.\\./errors/",
+              "^\\./errors$",
+              "^\\.\\./errors$",
+            ],
+            ["^\\./views/", "^\\.\\./views/", "^\\./views$", "^\\.\\./views$"],
+            // ["^\\.\\./"], // Relative Imports (Parent Directory)
+            // ["\\./"], // Relative Imports (Same Directory)
             ["^.+\\.module\\.css$"], // CSS Module Imports
             ["^\\u0000"], // Side Effect Imports
           ],

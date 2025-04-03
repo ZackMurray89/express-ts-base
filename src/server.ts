@@ -1,15 +1,20 @@
-import path from "path";
+import path from "node:path";
+
+import express, { Application, Request, Response } from "express";
+
 import env from "./config/env";
-import API_BASE_ROUTE from "./constants/apiConstants";
-import { HTTP } from "./constants/httpConstants";
+
 import corsMiddleware from "./middlewares/corsMiddleware";
 import errorHandler from "./middlewares/errorHandlerMiddleware";
 import { requestLogger } from "./middlewares/loggerMiddleware";
 import securityMiddleware from "./middlewares/securityMiddleware";
-import { logger, morganMiddleware } from "./utils/logger";
+
 import healthRoute from "./routes/healthRoute";
 
-import express, { Application, Request, Response } from "express";
+import { logger, morganMiddleware } from "./utils/logger";
+
+import API_BASE_ROUTE from "./constants/apiConstants";
+import { HTTP } from "./constants/httpConstants";
 
 const app: Application = express();
 
