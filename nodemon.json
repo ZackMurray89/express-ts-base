@@ -2,5 +2,9 @@
   "watch": ["src"],
   "ext": "ts,tsx",
   "exec": "ts-node --swc src/server.ts",
-  "ignore": ["dist", "node_modules"]
+  "ignore": ["dist", "node_modules", "tests"],
+  "delay": "100ms",
+  "legacyWatch": true,
+  "_comment": "if issues in running dev server set 'verbose' to true",
+  "verbose": true
 }
